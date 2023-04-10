@@ -1,21 +1,11 @@
-import { FC, useEffect, useState } from "react";
-import { useNavigate } from "react-router-dom";
-import Loader from "../../components/Loader/Loader";
+import { FC, useEffect } from "react";
 import usePageContext from "../../contexts/PageContext/PageContext";
 import useVideoContext from "../../contexts/VideoContext/VideoContext";
 import styles from "./PhotoPage.module.scss";
 
 const PhotoPage: FC = () => {
   const { image } = useVideoContext();
-  const { page, setPage, isLoading, setIsLoading } = usePageContext();
-
-  const navigate = useNavigate();
-
-  // useEffect(() => {
-  //   if (!image) {
-  //     navigate("/");
-  //   }
-  // }, []);
+  const { setIsLoading } = usePageContext();
 
   useEffect(() => {
     const setLoader = () => {

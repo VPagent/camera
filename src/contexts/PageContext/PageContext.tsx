@@ -8,12 +8,15 @@ const PageContext = createContext({
   setIsLoading: _.noop,
   showWarning: false,
   setShowWarning: _.noop,
+  isError: false,
+  setIsError: _.noop,
 });
 
 export const PageProvider = ({ children }: any) => {
   const [page, setPage] = useState(1);
   const [isLoading, setIsLoading] = useState(false);
   const [showWarning, setShowWarning] = useState(false);
+  const [isError, setIsError] = useState(false);
 
   return (
     <PageContext.Provider
@@ -24,6 +27,8 @@ export const PageProvider = ({ children }: any) => {
         setIsLoading,
         showWarning,
         setShowWarning,
+        isError,
+        setIsError,
       }}
     >
       {children}

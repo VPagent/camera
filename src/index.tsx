@@ -2,7 +2,6 @@ import React from "react";
 import ReactDOM from "react-dom/client";
 import "./index.css";
 import App from "./App";
-import { BrowserRouter } from "react-router-dom";
 import { VideoProvider } from "./contexts/VideoContext/VideoContext";
 import { PageProvider } from "./contexts/PageContext/PageContext";
 
@@ -13,9 +12,7 @@ root.render(
   <React.StrictMode>
     <PageProvider>
       <VideoProvider>
-        <BrowserRouter basename="/">
-          <App />
-        </BrowserRouter>
+        <App />
       </VideoProvider>
     </PageProvider>
   </React.StrictMode>

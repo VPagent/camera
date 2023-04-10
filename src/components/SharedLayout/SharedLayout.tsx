@@ -1,5 +1,4 @@
-import { FC, useCallback, useEffect } from "react";
-import { useNavigate } from "react-router-dom";
+import { FC, useEffect } from "react";
 import cn from "clsx";
 import usePageContext from "../../contexts/PageContext/PageContext";
 import useVideoContext from "../../contexts/VideoContext/VideoContext";
@@ -14,6 +13,7 @@ import next from "../../images/icons/next.png";
 import share from "../../images/icons/share.png";
 import takePhotoSec from "../../images/icons/takePhotoSec.png";
 import WarningBox from "../WarningBox/WarningBox";
+import ErrorBox from "../ErrorBox/ErrorBox";
 
 type Props = {
   children: any;
@@ -21,6 +21,7 @@ type Props = {
 
 const SharedLayout: FC<Props> = ({ children }) => {
   const { image, setImage, createPhoto } = useVideoContext();
+
   const {
     page,
     setPage,
@@ -28,6 +29,7 @@ const SharedLayout: FC<Props> = ({ children }) => {
     setIsLoading,
     showWarning,
     setShowWarning,
+    isError,
   } = usePageContext();
 
   useEffect(() => {
@@ -63,8 +65,6 @@ const SharedLayout: FC<Props> = ({ children }) => {
     setShowWarning(!showWarning);
   };
 
-  console.log(showWarning);
-
   return (
     <div className={styles.component}>
       <Container>
@@ -77,6 +77,7 @@ const SharedLayout: FC<Props> = ({ children }) => {
           {!isLoading && showWarning && (
             <WarningBox onToggle={onToggleWarningBox} />
           )}
+          {isError && <ErrorBox />}
         </div>
 
         <div className={styles.controls}>

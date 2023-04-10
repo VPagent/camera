@@ -11,8 +11,8 @@ const StartPage: FC = () => {
   const { isLoading, setIsLoading, setIsError } = usePageContext();
 
   const videoConstraints = {
-    width: 350,
-    height: 450,
+    width: 400,
+    height: 500,
     facingMode: "user",
   };
 
@@ -35,8 +35,8 @@ const StartPage: FC = () => {
             onUserMedia={() => setIsLoading(false)}
             onUserMediaError={() => deviceError()}
             forceScreenshotSourceSize={false}
-            width={350}
-            height={450}
+            width={400}
+            height={500}
           />
 
           {!isLoading && (

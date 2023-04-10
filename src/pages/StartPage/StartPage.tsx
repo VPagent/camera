@@ -7,12 +7,12 @@ import styles from "./StartPage.module.scss";
 import scanBorder from "../../images/icons/scanBorder.png";
 
 const StartPage: FC = () => {
-  const { image, webCamRef, videoHeight, videoWidth } = useVideoContext();
+  const { image, webCamRef } = useVideoContext();
   const { isLoading, setIsLoading, setIsError } = usePageContext();
 
   const videoConstraints = {
-    width: videoWidth,
-    height: videoHeight,
+    width: 350,
+    height: 450,
     facingMode: "user",
   };
 
@@ -34,9 +34,9 @@ const StartPage: FC = () => {
             videoConstraints={videoConstraints}
             onUserMedia={() => setIsLoading(false)}
             onUserMediaError={() => deviceError()}
-            forceScreenshotSourceSize={true}
-            width={videoWidth}
-            height={videoHeight}
+            forceScreenshotSourceSize={false}
+            width={350}
+            height={450}
           />
 
           {!isLoading && (

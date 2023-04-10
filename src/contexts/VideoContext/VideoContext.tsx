@@ -21,18 +21,7 @@ const VideoContext = createContext({
 
 export const VideoProvider = ({ children }: any) => {
   const [image, setImage] = useState("");
-  const [videoWidth, setVideoWidth] = useState(Math.round(window.screen.width));
-  const [videoHeight, setVideoHeight] = useState(
-    Math.round((videoWidth / 4) * 5)
-  );
   const webCamRef = useRef(null);
-
-  useEffect(() => {
-    setVideoWidth(Math.round(window.screen.width));
-    setVideoHeight(Math.round((videoWidth / 4) * 5));
-  }, [window.screen.width]);
-
-  console.log("width", videoWidth, "height", videoHeight);
 
   const createPhoto = useCallback(() => {
     //@ts-ignore
@@ -49,10 +38,6 @@ export const VideoProvider = ({ children }: any) => {
         //@ts-ignore
         webCamRef,
         createPhoto,
-        videoWidth,
-        videoHeight,
-        setVideoWidth,
-        setVideoHeight,
       }}
     >
       {children}

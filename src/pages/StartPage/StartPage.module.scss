@@ -1,0 +1,29 @@
+.videoBox {
+  position: relative;
+  border-radius: var(--border-radius-box);
+}
+
+.video {
+  border-radius: var(--border-radius-box);
+}
+
+.borderCameraIcon {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  width: 200px;
+  height: auto;
+}
+
+.takePhotoBtn {
+  background-color: var(--yellow-color);
+}
+
+.takePhotoIcon {
+  width: 48px;
+  height: auto;
+  color: black;
+  fill: black;
+}

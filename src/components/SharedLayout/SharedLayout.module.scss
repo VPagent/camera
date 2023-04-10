@@ -1,0 +1,73 @@
+.component {
+  display: flex;
+  flex-direction: column;
+}
+
+.pageContainer {
+  position: relative;
+
+  border-radius: var(--border-radius-box);
+}
+
+.controls {
+  display: flex;
+  align-items: center;
+
+  padding: 30px;
+}
+
+.btn {
+  color: black;
+  fill: black;
+}
+.btn:disabled {
+  // background-color: var(--disable-yellow-color);
+  opacity: 0.3;
+}
+
+.rephotoBtn {
+  width: 64px;
+  height: 64px;
+  margin-right: auto;
+
+  background-color: var(--yellow-color);
+  color: black;
+
+  .rephotoIcon {
+    width: 32px;
+    height: auto;
+  }
+}
+.controlsCenterBox {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.takePhotoBtn {
+  width: 96px;
+  height: 96px;
+
+  margin-top: 11px;
+
+  background-color: var(--yellow-color);
+}
+
+.uploadBtn {
+  width: 48px;
+  height: 48px;
+  background-color: var(--yellow-color);
+  margin-left: auto;
+  margin-right: 0;
+}
+
+.infoBtn {
+  margin-top: 16px;
+  margin-right: 24px;
+  width: 48px;
+  height: 48px;
+  background-color: var(--yellow-color);
+}

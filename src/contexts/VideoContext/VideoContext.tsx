@@ -2,6 +2,7 @@ import {
   createContext,
   useCallback,
   useContext,
+  useEffect,
   useRef,
   useState,
 } from "react";
@@ -25,6 +26,11 @@ export const VideoProvider = ({ children }: any) => {
     Math.round((videoWidth / 4) * 5)
   );
   const webCamRef = useRef(null);
+
+  useEffect(() => {
+    setVideoWidth(Math.round(window.screen.width));
+    setVideoHeight(Math.round((videoWidth / 4) * 5));
+  }, [window.screen.width]);
 
   console.log("width", videoWidth, "height", videoHeight);
 

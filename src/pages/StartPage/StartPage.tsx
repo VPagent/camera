@@ -34,7 +34,7 @@ const StartPage: FC = () => {
             videoConstraints={videoConstraints}
             onUserMedia={() => setIsLoading(false)}
             onUserMediaError={() => deviceError()}
-            forceScreenshotSourceSize={false}
+            forceScreenshotSourceSize={true}
           />
 
           {!isLoading && (
